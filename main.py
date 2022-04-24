@@ -72,5 +72,5 @@ def cmd_start(c, m):
 
 
 if __name__ == "__main__":
-    bot.run()
     app.run(debug=True, host=WEBAPP_HOST, port=WEBAPP_PORT)
+    bot.run()
