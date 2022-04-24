@@ -35,3 +35,14 @@ First, if you are not familiar with nginx, you should watch
 <br>Then <a href="https://www.youtube.com/watch?v=LUFn-QVcmB8&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=15">this video</a> will show you how to get domain name, 
 however if you want to get a <b>free</b> domain name (not permanent), investigate <a href="https://www.freenom.com/en/index.html?lang=en">this site</a>.
 Last thing, <a href="https://www.youtube.com/watch?v=Gdys9qPjuKs&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=16">this video</a> will show you how to enable https for free.
+
+
+
+
+# Deploy From Here
+
+## Railway
+
+## Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
