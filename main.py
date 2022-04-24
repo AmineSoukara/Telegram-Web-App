@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template, request
 from pyrogram import Client, filters
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 from utils import parse_init_data
-
+from threading import Thread
 from config import *
 
 app = Flask(__name__, static_url_path="/static")
@@ -15,8 +15,17 @@ API_HASH = "055ad1774b838870be128567b7a4c04a"
 BOT_TOKEN = "5186450665:AAEJjATsJZJvQ0vuoGS0PDHUsdYjFhEv6Ug"
 
 bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-bot.start()
 
+
+def pyro():
+    bot.start()
+    idle()
+    bot.stop()
+
+
+pyrogram_client = Thread(target=pyro, daemon=True)
+pyrogram_client.start()
+print("pyrogram_client started")
 
 @app.get("/")
 def index():
