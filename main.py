@@ -1,7 +1,8 @@
 import os
 
 from flask import Flask, jsonify, render_template, request
-from pyrogram import Client, filters
+from pyrogram import Client, filters, idle
+
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 from utils import parse_init_data
 from threading import Thread
