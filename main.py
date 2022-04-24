@@ -14,17 +14,9 @@ app = Flask(__name__, static_url_path="/static")
 API_ID = 2059351
 API_HASH = "055ad1774b838870be128567b7a4c04a"
 bot = Client("SkyeTwo", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-bot.run()
 
 
-def pyro():
-    bot.start()
-    idle()
-    bot.stop()
 
-
-# pyrogram_client = Thread(target=pyro, daemon=True)
-# pyrogram_client.start()
 print("pyrogram_client started")
 
 @app.get("/")
@@ -69,6 +61,9 @@ def submit_order():
 def cmd_start(c, m):
     m.reply("done")
 
+
+
+bot.run()
 
 # if __name__ == "__main__":
    # app.run(debug=True, host=WEBAPP_HOST, port=WEBAPP_PORT)
