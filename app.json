@@ -1,0 +1,36 @@
+{
+  "name": "hmanager",
+  "description": "With this you can deploy x",
+  "keywords": [
+    "telegram",
+    "open",
+    "source",
+    "multi",
+    "purpose",
+    "remote",
+    "deployer"
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "token",
+      "value": "None",
+      "required": True
+    },
+     "WEBHOOK_HOST": {
+      "description": "web url",
+      "value": "None",
+      "required": false
+    }
+  },
+  "addons": [
+  ],
+  "buildpacks": [{
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
