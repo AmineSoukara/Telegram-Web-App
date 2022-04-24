@@ -71,7 +71,7 @@ def ordered(message: types.Message):
 def main():
     bot.delete_webhook()
     # bot.set_webhook(WEBHOOK_URL)
-    bot.set_webhook(url=WEBHOOK_URL + BOT_TOKEN)
+    bot.set_webhook(url=WEBHOOK_HOST + BOT_TOKEN)
     app.run(host=WEBAPP_HOST, port=WEBAPP_PORT)
 
 
