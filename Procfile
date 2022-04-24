@@ -1,1 +1,1 @@
-web: python3 main.py
+web: gunicorn main:app --timeout 100 --log-file=-
