@@ -1,6 +1,8 @@
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-WEBHOOK_HOST = "your_domain.com"
-WEBHOOK_PATH = "/web_app_example"
+from os import environ 
+
+BOT_TOKEN = environ.get("YOUR_BOT_TOKEN", "")
+WEBHOOK_HOST = environ.get("WEBHOOK_HOST", "") # "your_domain.com"
+WEBHOOK_PATH = environ.get("WEBHOOK_PATH", "/demo") # "/web_app_example"
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 WEBAPP_HOST = "0.0.0.0"
 WEBAPP_PORT = 8000
