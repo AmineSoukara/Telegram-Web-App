@@ -1,3 +1,5 @@
 pyTelegramBotAPI
 Flask
 urllib3
+pyrogram
+tgcrypto
