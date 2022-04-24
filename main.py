@@ -22,8 +22,11 @@ def process_webhook_post():
 
 @app.get('/')
 def index():
-    return send_file('static/index.html')
+    return render_template('index.html')
 
+@app.get('/hello')
+def indevvvvx():
+    return "hello"
 
 @app.post('/submitOrder')
 def submit_order():
