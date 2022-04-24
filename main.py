@@ -24,8 +24,8 @@ def pyro():
     bot.stop()
 
 
-pyrogram_client = Thread(target=pyro, daemon=True)
-pyrogram_client.start()
+# pyrogram_client = Thread(target=pyro, daemon=True)
+# pyrogram_client.start()
 print("pyrogram_client started")
 
 @app.get("/")
@@ -72,4 +72,5 @@ def cmd_start(c, m):
 
 
 if __name__ == "__main__":
+    bot.run()
     app.run(debug=True, host=WEBAPP_HOST, port=WEBAPP_PORT)
