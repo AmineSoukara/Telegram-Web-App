@@ -16,6 +16,7 @@ API_HASH = "055ad1774b838870be128567b7a4c04a"
 BOT_TOKEN = "5186450665:AAEJjATsJZJvQ0vuoGS0PDHUsdYjFhEv6Ug"
 
 bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+bot.run()
 
 
 def pyro():
