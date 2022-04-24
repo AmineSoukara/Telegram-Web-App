@@ -13,7 +13,7 @@ app = Flask(__name__, static_url_path="/static")
 
 API_ID = 2059351
 API_HASH = "055ad1774b838870be128567b7a4c04a"
-bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+bot = Client("SkyeTwo", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 bot.run()
 
 
