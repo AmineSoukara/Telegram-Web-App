@@ -62,4 +62,4 @@ def cmd_start(c, m):
 
 
 if __name__ == "__main__":
-    app.run(host=WEBAPP_HOST, port=WEBAPP_PORT)
+    app.run(debug=True, host=WEBAPP_HOST, port=WEBAPP_PORT)
