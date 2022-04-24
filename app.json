@@ -14,12 +14,12 @@
     "BOT_TOKEN": {
       "description": "token",
       "value": "None",
-      "required": True
+      "required": true
     },
      "WEBHOOK_HOST": {
       "description": "web url",
       "value": "None",
-      "required": false
+      "required": true
     }
   },
   "addons": [
