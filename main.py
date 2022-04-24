@@ -1,14 +1,15 @@
-from flask import Flask, request, abort, send_file
+from flask import Flask, request, abort, send_file, render_template
 from telebot import TeleBot, types
 
-import config
+from config import *
 from utils import parse_init_data
 
-bot = TeleBot(config.BOT_TOKEN, parse_mode="HTML")
+bot = TeleBot(BOT_TOKEN, parse_mode="HTML")
 app = Flask(__name__, static_url_path='/static')
 
 
-@app.post(config.WEBHOOK_PATH)
+# @app.post(WEBHOOK_PATH)
+@app.route('/' + BOT_TOKEN, methods=['POST'])
 def process_webhook_post():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data().decode('utf-8')
@@ -27,7 +28,7 @@ def index():
 @app.post('/submitOrder')
 def submit_order():
     data = request.json
-    init_data = parse_init_data(token=config.BOT_TOKEN, raw_init_data=data['initData'])
+    init_data = parse_init_data(token=BOT_TOKEN, raw_init_data=data['initData'])
     if init_data is False:
         return False
 
@@ -54,7 +55,7 @@ def cmd_start(message: types.Message):
             [
                 types.InlineKeyboardButton(
                     text="Order Food",
-                    web_app=types.WebAppInfo(url=f'https://{config.WEBHOOK_HOST}'),
+                    web_app=types.WebAppInfo(url=f'https://{WEBHOOK_HOST}'),
                 )
             ]
         ]
@@ -69,9 +70,9 @@ def ordered(message: types.Message):
 
 def main():
     bot.delete_webhook()
-    bot.set_webhook(config.WEBHOOK_URL)
-
-    app.run(host=config.WEBAPP_HOST, port=config.WEBAPP_PORT)
+    # bot.set_webhook(WEBHOOK_URL)
+    bot.set_webhook(url=WEBHOOK_URL + BOT_TOKEN)
+    app.run(host=WEBAPP_HOST, port=WEBAPP_PORT)
 
 
 if __name__ == "__main__":
